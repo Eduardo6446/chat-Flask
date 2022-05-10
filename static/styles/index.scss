@@ -256,7 +256,7 @@ main{
 }
 
 .masthead {
-    height: 95vh;
+    height: 100vh;
     min-height: 400px;
     background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
     background-size: cover;
@@ -269,7 +269,7 @@ main{
             outline: none;
             padding: 10px 20px;
             background-color: $blanco;
-            width: 100%;
+            width: 90%;
             border-radius: 50px 0 0 50px;
         }
         button{

@@ -83,6 +83,16 @@ document.addEventListener('DOMContentLoaded', ()=> {
         });
     });
 
+    /*socket.on('remove channel', channelname =>{
+        
+        var content = document.querySelector('#messages');
+        while (content.hasChildNodes()) {  
+            content.removeChild(content.firstChild);
+        }
+
+
+    });*/
+
     document.querySelectorAll('.btn-link').forEach(button => {
         button.onclick = () => {
             const channelname = button.dataset.channel;
