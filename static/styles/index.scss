@@ -1,0 +1,302 @@
+//font-family: 'Baloo 2', cursive;
+//font-family: 'Poppins', sans-serif;
+
+$azul : #2791cf;
+$gris : #7e878c;
+$blanco : #fff;
+$gris-oscuro : #3f3f3f;
+
+
+$font-h : 'Baloo 2', cursive;
+$font-p : 'Poppins', sans-serif;
+$fsize : 16px;
+
+@mixin flexing($fd, $jc, $ai) {
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-p;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    overflow: hidden;
+    border-radius: 10px;
+
+    header{
+        background-color:  $azul;
+        color: $blanco;
+        padding: 7px 20px;
+        @include flexing(row, space-between , center);
+        div.title{
+            
+            @include flexing(row, flex-start, center);
+            h1{
+                font-family: $font-h;
+                font-size: 32px;
+                margin-left: 10px;
+            }
+            
+        }
+        button{
+            background-color: transparent;
+            border: none;
+            outline: none;
+            margin-left: auto;
+            display: none;
+
+        }
+        
+        h4{
+            font-size: 20px;
+            text-align: right;
+            margin-left: 800px;
+            display: block;
+        }
+
+        h2{
+            display: block;
+        }
+    }
+
+    div.containerr{
+        background-color: $gris;
+        padding: 20px;
+        @include flexing(row, flex-start, stretch);
+
+        div.users-window{
+            width: 350px;
+            height: 80vh;
+            background-color: $gris-oscuro;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-right: 20px;
+            color: $blanco;
+            overflow-y: auto;
+
+            div.users-head{
+                @include flexing(row, space-between, center);
+                margin-bottom: 15px;
+                h4{
+                    background-color: $gris;
+                    padding: 0 8px;
+                    border-radius: 50px;
+
+                }
+                button{
+                    background-color: $azul;
+                    font-weight: 600;
+                    font-size: $fsize;
+                    color: $blanco;
+                    border: none;
+                    outline: none;
+                    padding: 5px 15px;
+                    letter-spacing: 0.5px;
+                    border-radius: 20px;
+                }
+            }
+
+            div.users-list ul p{
+                font-size: 0.9rem;
+                letter-spacing: 0.5px;
+                font-weight: 600;
+                margin-bottom: 15px;
+                color: $blanco;
+                
+
+                .btn-link{
+                    color: $blanco;
+                    text-decoration: none;
+
+                }
+                
+            }
+
+        }
+
+        div.chat-window{
+            width: 100%;
+            border-radius: 10px;
+            background-color: $gris-oscuro;
+            div.chats{
+                height: 65vh;
+                padding: 20px;
+                overflow-y: auto;
+            
+                div.user-join{
+                    font-size: 0.9rem;
+                    color: $gris-oscuro;
+                    background-color: $blanco;
+                    border-radius: 50px;
+                    width: max-content;
+                    padding: 7px 20px;
+                    margin: 0 auto;
+                    margin-bottom: 15px;
+
+                }
+
+                div.message{
+                    color: $gris-oscuro;
+                    background-color: $blanco;
+                    padding: 5px 15px;
+                    max-width: 400px;
+                    margin-bottom: 15px;
+                    border-radius: 10px 50px 50px 10px;
+                    p{
+                        font-size: $fsize;
+                    }
+                    
+                }
+                div.outgoing{
+                    margin-left: auto;
+                    color: $blanco;
+                    background-color: $azul;
+                    border-radius: 50px 10px 10px 50px;
+                    text-align: right;
+                }
+
+            }
+            div.user-input{
+                @include flexing(row, space-between, stretch);
+                padding: 20px;
+                input{
+                    font-size: $fsize;
+                    border: none;
+                    outline: none;
+                    padding: 10px 20px;
+                    background-color: $blanco;
+                    width: 100%;
+                    border-radius: 50px 0 0 50px;
+                }
+                button{
+                    background-color: $azul;
+                    font-weight: 600;
+                    font-size: $fsize;
+                    color: $blanco;
+                    border: none;
+                    outline: none;
+                    padding: 5px 15px;
+                    letter-spacing: 0.5px;
+                    border-radius: 0 50px 50px 0;
+                }
+            }
+
+        }
+    }
+    .modal{
+        overflow: visible;
+    }
+
+
+    
+    
+}
+
+
+@media screen and (max-width: 900px){
+    main{
+        width: 95%;
+        header{
+            button{
+                display: block;
+            }
+            display: block;
+            h4{
+                display: none;
+            }
+            h2{
+                display: none;
+            }
+        }
+        div.containerr{
+            position: relative;
+            div.users-window{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                border-radius: 0 0 10px 10px;
+                height: max-content;
+                z-index: 11;
+                box-shadow: 0 15px 20px -20px black;
+                padding-bottom: 0;
+                display: none;
+                overflow-y: auto;
+
+                div.users-list{
+                    overflow-y: auto;
+                }
+                
+            }
+            div.chat-window{
+                div.chats{
+                    div.message{
+                        max-width: 300px;
+                    }
+                }
+            }
+        }
+
+    }
+    
+}
+
+.masthead {
+    height: 95vh;
+    min-height: 400px;
+    background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    div.input-group{
+        input{
+            font-size: $fsize;
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            background-color: $blanco;
+            width: 100%;
+            border-radius: 50px 0 0 50px;
+        }
+        button{
+            background-color: $azul;
+            font-weight: 600;
+            font-size: $fsize;
+            color: $blanco;
+            border: none;
+            outline: none;
+            padding: 5px 15px;
+            letter-spacing: 0.5px;
+            border-radius: 0 50px 50px 0;
+        }
+
+    }
+}
+
+.indexlog{
+    height: 300px;
+    width: 300px;
+
+}
+
+@media (max-width: 800px) {
+    .indexlog{
+        height: 200px;
+        width: 200px;
+    
+    }
+}
