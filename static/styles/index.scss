@@ -28,6 +28,63 @@ $fsize : 16px;
     }
 }
 
+div.modal{
+    div.modal-dialog{
+        background-color: $gris;
+        div.modal-content{
+            background-color: $gris-oscuro;
+            div.modal-header{
+                h3{
+                    color: $blanco;
+                    font-family: $font-h;
+                    
+                }
+            }
+
+            div.modal-body{
+                input{
+                    font-size: $fsize;
+                    border: none;
+                    outline: none;
+                    padding: 10px 20px;
+                    background-color: $blanco;
+                    width: 90%;
+                    border-radius: 50px;
+                }
+
+                hr{
+                    background-color: $blanco;
+                }
+                
+                button#b1{
+                    background-color: rgb(192, 0, 0);
+                    font-weight: 600;
+                    font-size: $fsize;
+                    color: $blanco;
+                    border: none;
+                    outline: none;
+                    padding: 5px 15px;
+                    letter-spacing: 0.5px;
+                    border-radius: 0 50px 50px 0;
+                }
+                button#b2{
+                    background-color: $azul;
+                    font-weight: 600;
+                    font-size: $fsize;
+                    color: $blanco;
+                    border: none;
+                    outline: none;
+                    padding: 5px 15px;
+                    letter-spacing: 0.5px;
+                    border-radius: 50px 0 0 50px ;
+                }
+
+
+            }
+        }
+    }
+}
+
 main{
     position: absolute;
     top: 50%;

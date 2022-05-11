@@ -70,9 +70,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
     };
 
     socket.on('channel created', channelname => {
-        const li = document.createElement('li');
-        li.innerHTML = `<buttton class="btn btn-link" data-channel="${channelname}">${channelname}</button>`;
-        document.querySelector('#channel_list').append(li);
+        const p = document.createElement('p');
+        p.innerHTML = `<buttton class="btn btn-link" data-channel="${channelname}">${channelname}</button>`;
+        document.querySelector('#channel_list').append(p);
         buttons = document.querySelectorAll('.btn-link');
         buttons.forEach(button => {
             button.onclick = () => {

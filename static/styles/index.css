@@ -10,6 +10,57 @@
   display: none;
 }
 
+div.modal div.modal-dialog {
+  background-color: #7e878c;
+}
+
+div.modal div.modal-dialog div.modal-content {
+  background-color: #3f3f3f;
+}
+
+div.modal div.modal-dialog div.modal-content div.modal-header h3 {
+  color: #fff;
+  font-family: "Baloo 2", cursive;
+}
+
+div.modal div.modal-dialog div.modal-content div.modal-body input {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  background-color: #fff;
+  width: 90%;
+  border-radius: 50px;
+}
+
+div.modal div.modal-dialog div.modal-content div.modal-body hr {
+  background-color: #fff;
+}
+
+div.modal div.modal-dialog div.modal-content div.modal-body button#b1 {
+  background-color: #c00000;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 5px 15px;
+  letter-spacing: 0.5px;
+  border-radius: 0 50px 50px 0;
+}
+
+div.modal div.modal-dialog div.modal-content div.modal-body button#b2 {
+  background-color: #2791cf;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 5px 15px;
+  letter-spacing: 0.5px;
+  border-radius: 50px 0 0 50px;
+}
+
 main {
   position: absolute;
   top: 50%;
