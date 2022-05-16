@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,23 +20,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js" integrity="sha512-hkvXFLlESjeYENO4CNi69z3A1puvONQV5Uh+G4TUDayZxSLyic5Kba9hhuiNLbHqdnKNMk2PxXKm0v7KDnWkYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
+
 <body>
     <header class="masthead" id="login_page">
-        <div class="container h-100" >
-          <div class="row h-100 align-items-center">
-            <div class="col-12 text-center">
-                <img class="indexlog" src="{{url_for('static',filename='img/sign.png')}}" alt="logoTemporal2" />
-              <h1 class="fw-light">Bienvenido al Chat</h1>
-              <form id="login_form">
-                <div class="input-group">            
-                    <input type="text" class="form-control" placeholder="Enter username" id="username" name="username" required>
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </div>       
-            </form>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <img class="indexlog" src="{{url_for('static',filename='img/sign.png')}}" alt="logoTemporal2" />
+                    <h1 class="fw-light">Bienvenido al Chat</h1>
+                    <form id="login_form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter username" id="username" name="username" required>
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-          </div>
         </div>
     </header>
 
@@ -50,15 +52,15 @@
                 <button type="button" onclick="show_hide()">
                     <img src="{{ url_for('static',filename='img/icon.png')}}" width="30px">
                 </button>
-                
+
             </div>
 
-            <h4 id="welcome_user"></h4>
+
 
 
             <h2 id="chat_msg_header"></h2>
 
-        
+
         </header>
 
         <div class="containerr">
@@ -70,79 +72,92 @@
                 <div class="users-list" id="channel_list_div">
                     <ul id="channel_list">
                         {% for channel in channels%}
-                            <p> <buttton class="btn btn-link" data-channel= "{{channel}}"> {{channel}} </button> </p>
-                                                        
+                        <p>
+                            <buttton class="btn btn-link" data-channel="{{channel}}"> {{channel}} </button>
+                        </p>
+
                         {% endfor %}
 
-                    </ul>  
-                </div>                
+                    </ul>
+                </div>
             </div>
 
             <div class="chat-window">
                 <div class="chats" id="messages">
                     <div class="user-join">
-                        <p>Bienvenido al Chat :D</p>
+                        <p id="welcome_user"></p>
+
                     </div>
-                    
+
                 </div>
-                    
+
                 <form id="message_submit">
                     <div class="user-input">
-                        <input id="message_input" name="message_input" type="text" placeholder="Type a message...">
-                        <button type="submit" onclick="scrollAuto()">SEND</button>
+                        <input class="customInput" id="message_input" name="message_input" type="text" placeholder="Type a message...">
+                        <button type="submit" id="limpiar" onclick="scrollAuto()">SEND</button>
                     </div>
                 </form>
-                
-                    
+
+
             </div>
         </div>
         <div class="modal" id="myModal">
             <div class="modal-dialog">
                 <div class="modal-content">
-                
+
                     <!-- Modal Header -->
                     <div class="modal-header">
                         <h3 class="modal-title"> Create a new channel! </h3>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                    
+
                     <!-- Modal body -->
                     <div class="modal-body">
                         <form id="createchannel">
-                            <input type="text" class="form-control" placeholder="Name of Channel" id="channelname" name="channelname" required>
-                            <hr>                      
+                            <input type="text" class="form-control" placeholder="Canal" id="channelname" name="channelname" required>
+                            <hr>
                             <button type="button" class="btn btn-danger float-right" data-dismiss="modal" id="b1">Cancel</button>
                             <button type="submit" class="btn btn-primary float-right" id="b2">Create</button>
                         </form>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </main>
     <script>
-        var uwindow=document.querySelector('.users-window');
-        function show_hide(){
+        var uwindow = document.querySelector('.users-window');
+
+        function show_hide() {
             if (uwindow.style.display == "none") {
                 uwindow.style.display = "block";
-            }
-            else if (uwindow.style.display == "block") {
+            } else if (uwindow.style.display == "block") {
                 uwindow.style.display = "none";
-            }
-            else {
-                uwindow.style.display = "block";    
+            } else {
+                uwindow.style.display = "block";
             }
         }
-        function scrollAuto(){
+
+        function scrollAuto() {
             var elem = document.getElementById('messages');
             elem.scrollTop = elem.scrollHeight;
         }
         $('#message_input').emojioneArea({
-            pickerPosition:"top"
-        });
+            pickerPosition: "top",
+            tones: false,
+            search: false,
+            shortnames: true,
 
+
+        });
+        /*$(document).ready(function() {
+            $('#limpiar').click(function() {
+                $('input[type="text"]').val('');
+            });
+        });*/
     </script>
 
 
 </body>
+
 </html>

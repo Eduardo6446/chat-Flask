@@ -121,15 +121,10 @@ main header button {
   display: none;
 }
 
-main header h4 {
-  font-size: 20px;
-  text-align: right;
-  margin-left: 800px;
-  display: block;
-}
-
 main header h2 {
   display: block;
+  font-size: "Baloo 2", cursive;
+  padding: 7px 20px;
 }
 
 main div.containerr {
@@ -272,14 +267,14 @@ main div.containerr div.chat-window div.user-input {
   padding: 20px;
 }
 
-main div.containerr div.chat-window div.user-input input {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  padding: 10px 20px;
-  background-color: #fff;
-  width: 100%;
-  border-radius: 50px 0 0 50px;
+main div.containerr div.chat-window div.user-input .customInput {
+  font-size: 16px !important;
+  border: none !important;
+  outline: none !important;
+  padding: 10px 20px !important;
+  background-color: #fff !important;
+  width: 100% !important;
+  border-radius: 50px 0 0 50px !important;
 }
 
 main div.containerr div.chat-window div.user-input button {

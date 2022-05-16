@@ -8,7 +8,7 @@ app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 socketio = SocketIO(app)
 
 users = []
-channels = []
+channels = ["General"]
 user_channels = {} 
 messages = {}
 
@@ -20,7 +20,7 @@ def index():
 def login(username):
     
     if username in users:
-        emit("alert", f"Username {username} already exists!")
+        emit("alert", f"usuario {username} ya existe!")
     else:
         users.append(username)
         emit("login", username)
@@ -28,7 +28,7 @@ def login(username):
 @socketio.on("create channel")
 def createchannel(channelname):
     if channelname in channels:
-        emit("alert", f"Channelname {channelname} already exists!")
+        emit("alert", f"Canal {channelname} ya existe!")
     else:
         channels.append(channelname)
         emit("channel created", channelname, broadcast=True)

@@ -1,16 +1,14 @@
 //font-family: 'Baloo 2', cursive;
 //font-family: 'Poppins', sans-serif;
-
-$azul : #2791cf;
-$gris : #7e878c;
-$blanco : #fff;
-$gris-oscuro : #3f3f3f;
-
-
-$font-h : 'Baloo 2', cursive;
-$font-p : 'Poppins', sans-serif;
-$fsize : 16px;
-
+$azul: #2791cf;
+$gris: #7e878c;
+$blanco: #fff;
+$gris-oscuro: #3f3f3f;
+$font-h: 'Baloo 2',
+cursive;
+$font-p: 'Poppins',
+sans-serif;
+$fsize: 16px;
 @mixin flexing($fd, $jc, $ai) {
     display: flex;
     flex-direction: $fd;
@@ -18,31 +16,29 @@ $fsize : 16px;
     align-items: $ai;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: $font-p;
-    ::-webkit-scrollbar {
+     ::-webkit-scrollbar {
         display: none;
     }
 }
 
-div.modal{
-    div.modal-dialog{
+div.modal {
+    div.modal-dialog {
         background-color: $gris;
-        div.modal-content{
+        div.modal-content {
             background-color: $gris-oscuro;
-            div.modal-header{
-                h3{
+            div.modal-header {
+                h3 {
                     color: $blanco;
                     font-family: $font-h;
-                    
                 }
             }
-
-            div.modal-body{
-                input{
+            div.modal-body {
+                input {
                     font-size: $fsize;
                     border: none;
                     outline: none;
@@ -51,12 +47,10 @@ div.modal{
                     width: 90%;
                     border-radius: 50px;
                 }
-
-                hr{
+                hr {
                     background-color: $blanco;
                 }
-                
-                button#b1{
+                button#b1 {
                     background-color: rgb(192, 0, 0);
                     font-weight: 600;
                     font-size: $fsize;
@@ -67,7 +61,7 @@ div.modal{
                     letter-spacing: 0.5px;
                     border-radius: 0 50px 50px 0;
                 }
-                button#b2{
+                button#b2 {
                     background-color: $azul;
                     font-weight: 600;
                     font-size: $fsize;
@@ -76,16 +70,14 @@ div.modal{
                     outline: none;
                     padding: 5px 15px;
                     letter-spacing: 0.5px;
-                    border-radius: 50px 0 0 50px ;
+                    border-radius: 50px 0 0 50px;
                 }
-
-
             }
         }
     }
 }
 
-main{
+main {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -93,49 +85,37 @@ main{
     width: 80%;
     overflow: hidden;
     border-radius: 10px;
-
-    header{
-        background-color:  $azul;
+    header {
+        background-color: $azul;
         color: $blanco;
         padding: 7px 20px;
-        @include flexing(row, space-between , center);
-        div.title{
-            
+        @include flexing(row, space-between, center);
+        div.title {
             @include flexing(row, flex-start, center);
-            h1{
+            h1 {
                 font-family: $font-h;
                 font-size: 32px;
                 margin-left: 10px;
             }
-            
         }
-        button{
+        button {
             background-color: transparent;
             border: none;
             outline: none;
             margin-left: auto;
             display: none;
-
         }
-        
-        h4{
-            font-size: 20px;
-            text-align: right;
-            margin-left: 800px;
+        h2 {
             display: block;
-        }
-
-        h2{
-            display: block;
+            font-size: $font-h;
+            padding: 7px 20px;
         }
     }
-
-    div.containerr{
+    div.containerr {
         background-color: $gris;
         padding: 20px;
         @include flexing(row, flex-start, stretch);
-
-        div.users-window{
+        div.users-window {
             width: 350px;
             height: 80vh;
             background-color: $gris-oscuro;
@@ -144,17 +124,15 @@ main{
             margin-right: 20px;
             color: $blanco;
             overflow-y: auto;
-
-            div.users-head{
+            div.users-head {
                 @include flexing(row, space-between, center);
                 margin-bottom: 15px;
-                h4{
+                h4 {
                     background-color: $gris;
                     padding: 0 8px;
                     border-radius: 50px;
-
                 }
-                button{
+                button {
                     background-color: $azul;
                     font-weight: 600;
                     font-size: $fsize;
@@ -166,35 +144,27 @@ main{
                     border-radius: 20px;
                 }
             }
-
-            div.users-list ul p{
+            div.users-list ul p {
                 font-size: 0.9rem;
                 letter-spacing: 0.5px;
                 font-weight: 600;
                 margin-bottom: 15px;
                 color: $blanco;
-                
-
-                .btn-link{
+                .btn-link {
                     color: $blanco;
                     text-decoration: none;
-
                 }
-                
             }
-
         }
-
-        div.chat-window{
+        div.chat-window {
             width: 100%;
             border-radius: 10px;
             background-color: $gris-oscuro;
-            div.chats{
+            div.chats {
                 height: 65vh;
                 padding: 20px;
                 overflow-y: auto;
-            
-                div.user-join{
+                div.user-join {
                     font-size: 0.9rem;
                     color: $gris-oscuro;
                     background-color: $blanco;
@@ -203,43 +173,39 @@ main{
                     padding: 7px 20px;
                     margin: 0 auto;
                     margin-bottom: 15px;
-
                 }
-
-                div.message{
+                div.message {
                     color: $gris-oscuro;
                     background-color: $blanco;
                     padding: 5px 15px;
                     max-width: 400px;
                     margin-bottom: 15px;
                     border-radius: 10px 50px 50px 10px;
-                    p{
+                    p {
                         font-size: $fsize;
                     }
-                    
                 }
-                div.outgoing{
+                div.outgoing {
                     margin-left: auto;
                     color: $blanco;
                     background-color: $azul;
                     border-radius: 50px 10px 10px 50px;
                     text-align: right;
                 }
-
             }
-            div.user-input{
+            div.user-input {
                 @include flexing(row, space-between, stretch);
                 padding: 20px;
-                input{
-                    font-size: $fsize;
-                    border: none;
-                    outline: none;
-                    padding: 10px 20px;
-                    background-color: $blanco;
-                    width: 100%;
-                    border-radius: 50px 0 0 50px;
+                .customInput {
+                    font-size: $fsize !important;
+                    border: none !important;
+                    outline: none !important;
+                    padding: 10px 20px !important;
+                    background-color: $blanco !important;
+                    width: 100% !important;
+                    border-radius: 50px 0 0 50px !important;
                 }
-                button{
+                button {
                     background-color: $azul;
                     font-weight: 600;
                     font-size: $fsize;
@@ -251,37 +217,31 @@ main{
                     border-radius: 0 50px 50px 0;
                 }
             }
-
         }
     }
-    .modal{
+    .modal {
         overflow: visible;
     }
-
-
-    
-    
 }
 
-
-@media screen and (max-width: 900px){
-    main{
+@media screen and (max-width: 900px) {
+    main {
         width: 95%;
-        header{
-            button{
+        header {
+            button {
                 display: block;
             }
             display: block;
-            h4{
+            h4 {
                 display: none;
             }
-            h2{
+            h2 {
                 display: none;
             }
         }
-        div.containerr{
+        div.containerr {
             position: relative;
-            div.users-window{
+            div.users-window {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -293,23 +253,19 @@ main{
                 padding-bottom: 0;
                 display: none;
                 overflow-y: auto;
-
-                div.users-list{
+                div.users-list {
                     overflow-y: auto;
                 }
-                
             }
-            div.chat-window{
-                div.chats{
-                    div.message{
+            div.chat-window {
+                div.chats {
+                    div.message {
                         max-width: 300px;
                     }
                 }
             }
         }
-
     }
-    
 }
 
 .masthead {
@@ -319,8 +275,8 @@ main{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    div.input-group{
-        input{
+    div.input-group {
+        input {
             font-size: $fsize;
             border: none;
             outline: none;
@@ -329,7 +285,7 @@ main{
             width: 90%;
             border-radius: 50px 0 0 50px;
         }
-        button{
+        button {
             background-color: $azul;
             font-weight: 600;
             font-size: $fsize;
@@ -340,20 +296,17 @@ main{
             letter-spacing: 0.5px;
             border-radius: 0 50px 50px 0;
         }
-
     }
 }
 
-.indexlog{
+.indexlog {
     height: 300px;
     width: 300px;
-
 }
 
 @media (max-width: 800px) {
-    .indexlog{
+    .indexlog {
         height: 200px;
         width: 200px;
-    
     }
 }
